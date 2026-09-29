@@ -26,3 +26,23 @@ def binary_search(arr: list, target: int) -> int:
             right = mid - 1
             
     return -1
+
+def bubble_sort(arr: list) -> list:
+    """Сортирует список методом пузырька."""
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+if __name__ == "__main__":
+    # Блок для проверки работы функций
+    print("Переворот строки:", reverse_string("Привет, Git!"))
+    print("Словарь квадратов (до 5):", get_squares_dict(5))
+    print("НОД 48 и 18:", get_gcd(48, 18))
+    
+    test_list = [64, 34, 25, 12, 22, 11, 90]
+    sorted_list = bubble_sort(test_list.copy())
+    print("Сортировка пузырьком:", sorted_list)
+    print("Бинарный поиск числа 25:", binary_search(sorted_list, 25))
